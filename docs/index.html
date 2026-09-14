@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unidad 1 de Hidráulica aplicada a la Agronomía: hidrostática, presión, medición y fuerzas sobre superficies.">
+  <title>Unidad 1 | Hidráulica aplicada a la Agronomía</title>
+  <style>
+    :root {
+      --ink: #17342d;
+      --muted: #50655f;
+      --paper: #f7faf5;
+      --card: #ffffff;
+      --green: #146b4a;
+      --green-dark: #0b4933;
+      --water: #237c9f;
+      --line: #d9e5df;
+      --accent: #e5b547;
+      --shadow: 0 18px 45px rgba(18, 69, 53, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .hero {
+      min-height: 68vh;
+      display: grid;
+      place-items: center;
+      padding: 4.5rem 1.25rem;
+      color: white;
+      background:
+        linear-gradient(100deg, rgba(7, 54, 39, .96) 0%, rgba(12, 83, 59, .88) 52%, rgba(24, 104, 129, .62) 100%),
+        url("assets/01_sistema_agricola_hidrostatico.png") center/cover;
+    }
+    .hero-inner { width: min(1120px, 100%); }
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 1rem;
+      padding: .38rem .78rem;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      font-size: .78rem;
+    }
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      line-height: .98;
+      letter-spacing: -.05em;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 1.5rem 0 0;
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      color: rgba(255,255,255,.9);
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: .75rem 1.15rem;
+      border-radius: .65rem;
+      background: white;
+      color: var(--green-dark);
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .button.secondary { border: 1px solid rgba(255,255,255,.45); background: transparent; color: white; }
+    main { width: min(1120px, calc(100% - 2.5rem)); margin: 0 auto; padding: 4rem 0 5rem; }
+    .intro {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    h2 { margin: 0 0 .7rem; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.1; letter-spacing: -.035em; }
+    .intro p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+    .route {
+      padding: 1.25rem;
+      border-left: 5px solid var(--accent);
+      border-radius: .5rem;
+      background: #fff8e7;
+      color: #614913;
+    }
+    .route strong { display: block; margin-bottom: .25rem; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem; }
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+    .card img { width: 100%; aspect-ratio: 16/8.5; object-fit: cover; display: block; background: #dfece7; }
+    .card-body { padding: 1.4rem; }
+    .number { color: var(--water); font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .card h3 { margin: .35rem 0 .6rem; font-size: 1.38rem; line-height: 1.25; }
+    .card p { margin: 0; color: var(--muted); }
+    .links { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.15rem; }
+    .links a {
+      padding: .58rem .85rem;
+      border-radius: .55rem;
+      background: var(--green);
+      color: white;
+      font-weight: 750;
+      text-decoration: none;
+    }
+    .outcomes {
+      margin-top: 3rem;
+      padding: 2rem;
+      border-radius: 1rem;
+      color: white;
+      background: var(--green-dark);
+    }
+    .outcomes h2 { font-size: 1.8rem; }
+    .outcomes ul { margin: 1rem 0 0; padding-left: 1.25rem; columns: 2; column-gap: 3rem; }
+    footer { padding: 1.5rem; text-align: center; color: var(--muted); border-top: 1px solid var(--line); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    @media (max-width: 760px) {
+      .hero { min-height: auto; }
+      .intro, .grid { grid-template-columns: 1fr; }
+      .outcomes ul { columns: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Hidráulica aplicada a la Agronomía</p>
+      <h1>Unidad 1 · Hidrostática</h1>
+      <p class="lead">Comprende cómo se comporta el agua en reposo y aplica presión, medición y fuerzas hidrostáticas al almacenamiento, filtrado y conducción del agua en sistemas agrícolas.</p>
+      <nav class="hero-actions" aria-label="Accesos principales">
+        <a class="button" href="#temas">Comenzar la unidad</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="ruta-title">
+      <div>
+        <h2 id="ruta-title">Una ruta desde la intuición hasta la aplicación</h2>
+        <p>Cada tema inicia con una situación agrícola, explica el fenómeno mediante esquemas, formaliza las ecuaciones con sus unidades y cierra con ejemplos, ejercicios e interpretación agronómica.</p>
+      </div>
+      <aside class="route">
+        <strong>Secuencia recomendada</strong>
+        Estudia los temas 1.1 a 1.4 en orden y utiliza la navegación de cada tema para consultar los recursos visuales, ejemplos y ejercicios.
+      </aside>
+    </section>
+
+    <section id="temas" class="grid" aria-label="Temas de la unidad 1">
+      <article class="card">
+        <img src="assets/01_sistema_agricola_hidrostatico.png" alt="Sistema agrícola con depósito, conducción y cultivo para introducir la hidrostática">
+        <div class="card-body">
+          <span class="number">Tema 1.1</span>
+          <h3>¿Qué estudia la hidrostática?</h3>
+          <p>Reconoce el agua en reposo, las propiedades relevantes del fluido y su papel en depósitos y redes agrícolas.</p>
+          <div class="links">
+            <a href="unidad-1/tema-1-1/">Abrir tema</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/02_recipientes_stevin.png" alt="Recipientes con agua que muestran la relación entre profundidad y presión">
+        <div class="card-body">
+          <span class="number">Tema 1.2</span>
+          <h3>Presión, profundidad y elevación</h3>
+          <p>Relaciona la profundidad con la presión y distingue la elevación para interpretar tanques y puntos de una conducción.</p>
+          <div class="links">
+            <a href="unidad-1/tema-1-2/">Abrir tema</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/03_filtro_manometros.png" alt="Filtro agrícola con manómetros para comparar presiones">
+        <div class="card-body">
+          <span class="number">Tema 1.3</span>
+          <h3>Cómo medir la presión del agua</h3>
+          <p>Interpreta manómetros y columnas de líquido, selecciona unidades y evalúa diferencias de presión en equipos de riego.</p>
+          <div class="links">
+            <a href="unidad-1/tema-1-3/">Abrir tema</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/04_compuertas_hidrostaticas.png" alt="Compuerta agrícola sometida a una distribución de presión hidrostática">
+        <div class="card-body">
+          <span class="number">Tema 1.4</span>
+          <h3>Fuerzas sobre superficies</h3>
+          <p>Calcula la fuerza resultante y su punto de aplicación para analizar compuertas y paredes de almacenamiento.</p>
+          <div class="links">
+            <a href="unidad-1/tema-1-4/">Abrir tema</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="outcomes" aria-labelledby="outcomes-title">
+      <h2 id="outcomes-title">Al finalizar podrás</h2>
+      <ul>
+        <li>Explicar físicamente la presión en un fluido en reposo.</li>
+        <li>Aplicar ecuaciones con unidades consistentes.</li>
+        <li>Leer instrumentos de presión en sistemas agrícolas.</li>
+        <li>Resolver y comunicar problemas de tanques y compuertas.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>Autor: Miguel Armando López Beltrán · 2026 · Hidráulica para Agronomía</footer>
+</body>
+</html>

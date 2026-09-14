@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Miguel Armando López Beltrán">
+<meta name="dcterms.date" content="2026-01-01">
+
+<title>Tema 1.2. Presión hidrostática, profundidad y elevación</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-62e2d20df198e8a01bb734742f2e28cf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#empezamos-desde-cero" id="toc-empezamos-desde-cero" class="nav-link active" data-scroll-target="#empezamos-desde-cero">Empezamos desde cero</a></li>
+  <li><a href="#ruta-de-aprendizaje" id="toc-ruta-de-aprendizaje" class="nav-link" data-scroll-target="#ruta-de-aprendizaje">Ruta de aprendizaje</a></li>
+  <li><a href="#situación-agrícola-por-qué-elevar-un-tanque" id="toc-situación-agrícola-por-qué-elevar-un-tanque" class="nav-link" data-scroll-target="#situación-agrícola-por-qué-elevar-un-tanque">1. Situación agrícola: ¿por qué elevar un tanque?</a></li>
+  <li><a href="#construcción-física-de-la-ecuación" id="toc-construcción-física-de-la-ecuación" class="nav-link" data-scroll-target="#construcción-física-de-la-ecuación">2. Construcción física de la ecuación</a></li>
+  <li><a href="#integración-entre-dos-puntos" id="toc-integración-entre-dos-puntos" class="nav-link" data-scroll-target="#integración-entre-dos-puntos">3. Integración entre dos puntos</a>
+  <ul class="collapse">
+  <li><a href="#idea-clave" id="toc-idea-clave" class="nav-link" data-scroll-target="#idea-clave">Idea clave</a></li>
+  </ul></li>
+  <li><a href="#presión-absoluta-atmosférica-y-manométrica" id="toc-presión-absoluta-atmosférica-y-manométrica" class="nav-link" data-scroll-target="#presión-absoluta-atmosférica-y-manométrica">4. Presión absoluta, atmosférica y manométrica</a></li>
+  <li><a href="#altura-o-carga-de-presión" id="toc-altura-o-carga-de-presión" class="nav-link" data-scroll-target="#altura-o-carga-de-presión">5. Altura o carga de presión</a></li>
+  <li><a href="#principios-de-stevin-y-pascal" id="toc-principios-de-stevin-y-pascal" class="nav-link" data-scroll-target="#principios-de-stevin-y-pascal">6. Principios de Stevin y Pascal</a></li>
+  <li><a href="#ejemplo-resuelto-a-presión-en-el-fondo-de-un-tanque" id="toc-ejemplo-resuelto-a-presión-en-el-fondo-de-un-tanque" class="nav-link" data-scroll-target="#ejemplo-resuelto-a-presión-en-el-fondo-de-un-tanque">7. Ejemplo resuelto A: presión en el fondo de un tanque</a></li>
+  <li><a href="#ejemplo-resuelto-b-desnivel-entre-tanque-y-parcela" id="toc-ejemplo-resuelto-b-desnivel-entre-tanque-y-parcela" class="nav-link" data-scroll-target="#ejemplo-resuelto-b-desnivel-entre-tanque-y-parcela">8. Ejemplo resuelto B: desnivel entre tanque y parcela</a></li>
+  <li><a href="#ejemplo-resuelto-c-prensa-hidráulica" id="toc-ejemplo-resuelto-c-prensa-hidráulica" class="nav-link" data-scroll-target="#ejemplo-resuelto-c-prensa-hidráulica">9. Ejemplo resuelto C: prensa hidráulica</a></li>
+  <li><a href="#práctica-presión-contra-profundidad" id="toc-práctica-presión-contra-profundidad" class="nav-link" data-scroll-target="#práctica-presión-contra-profundidad">10. Práctica: presión contra profundidad</a></li>
+  <li><a href="#errores-frecuentes" id="toc-errores-frecuentes" class="nav-link" data-scroll-target="#errores-frecuentes">11. Errores frecuentes</a></li>
+  <li><a href="#ejercicios-graduados" id="toc-ejercicios-graduados" class="nav-link" data-scroll-target="#ejercicios-graduados">12. Ejercicios graduados</a></li>
+  <li><a href="#comprobación-final" id="toc-comprobación-final" class="nav-link" data-scroll-target="#comprobación-final">13. Comprobación final</a></li>
+  <li><a href="#referencias-y-ampliación" id="toc-referencias-y-ampliación" class="nav-link" data-scroll-target="#referencias-y-ampliación">Referencias y ampliación</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tema 1.2. Presión hidrostática, profundidad y elevación</h1>
+<p class="subtitle lead">Unidad 1 · Hidrostática aplicada a la Agronomía</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Miguel Armando López Beltrán </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="empezamos-desde-cero" class="level2 hero">
+<h2 class="anchored" data-anchor-id="empezamos-desde-cero">Empezamos desde cero</h2>
+<p>No necesitas haber estudiado hidráulica. En este tema aprenderás a <strong>observar el agua</strong>, traducir la observación a un esquema, elegir una ecuación, conservar las unidades y explicar qué significa el resultado para una instalación agrícola.</p>
+</section>
+<p><strong>Convenciones de trabajo.</strong> Usaremos agua a temperatura ambiente con densidad aproximada <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>998</mn><mspace width="0.222em"></mspace><msup><mtext mathvariant="normal">kg/m</mtext><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">\rho=998\ \text{kg/m}^3</annotation></semantics></math> y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mn>9.81</mn><mspace width="0.222em"></mspace><msup><mtext mathvariant="normal">m/s</mtext><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">g=9.81\ \text{m/s}^2</annotation></semantics></math>, salvo que el problema indique otro valor. Diferenciaremos presión absoluta y manométrica.</p>
+<section id="ruta-de-aprendizaje" class="level2">
+<h2 class="anchored" data-anchor-id="ruta-de-aprendizaje">Ruta de aprendizaje</h2>
+<ol type="1">
+<li>Situación agrícola y pregunta guía.</li>
+<li>Explicación física con palabras sencillas.</li>
+<li>Esquema y vocabulario visual.</li>
+<li>Modelo matemático, unidades y supuestos.</li>
+<li>Ejemplos resueltos paso a paso.</li>
+<li>Práctica guiada e independiente.</li>
+<li>Interpretación agronómica y autoevaluación.</li>
+</ol>
+</section>
+<section id="situación-agrícola-por-qué-elevar-un-tanque" class="level2">
+<h2 class="anchored" data-anchor-id="situación-agrícola-por-qué-elevar-un-tanque">1. Situación agrícola: ¿por qué elevar un tanque?</h2>
+<p>En riego por gravedad, elevar el nivel libre del agua puede producir presión aun con la bomba apagada. La pregunta es: <strong>¿cuánta presión aporta una diferencia de altura?</strong></p>
+<div class="predice">
+<p>Dos puntos están en el mismo tanque: el punto B está más profundo que A. ¿Cuál tiene mayor presión? ¿Importa que el tanque sea ancho o angosto?</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="recursos/visual_contextual.png" class="img-fluid figure-img" alt="Recipientes conectados con igual nivel libre"></p>
+<figcaption>Recipientes de formas diferentes conectados y aplicaciones en almacenamiento de agua.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="recursos/visual_esquema.png" class="img-fluid figure-img" alt="Gradiente de presión con profundidad, cotas en terreno y vasos comunicantes"></p>
+<figcaption>Relación entre profundidad, elevación y presión en un tanque y en una ladera.</figcaption>
+</figure>
+</div>
+</section>
+<section id="construcción-física-de-la-ecuación" class="level2">
+<h2 class="anchored" data-anchor-id="construcción-física-de-la-ecuación">2. Construcción física de la ecuación</h2>
+<p>Considera una pequeña columna de agua de área <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math> y altura <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\Delta z</annotation></semantics></math>. Si el eje <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math> es positivo hacia arriba, actúan:</p>
+<ul>
+<li>presión inferior hacia arriba: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">p(z)A</annotation></semantics></math>;</li>
+<li>presión superior hacia abajo: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>+</mo><mi mathvariant="normal">Δ</mi><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">p(z+\Delta z)A</annotation></semantics></math>;</li>
+<li>peso hacia abajo: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mi>g</mi><mi>A</mi><mi mathvariant="normal">Δ</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\rho gA\Delta z</annotation></semantics></math>.</li>
+</ul>
+<p>Como el agua está en equilibrio, la suma de fuerzas verticales es cero:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mi>A</mi><mo>−</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>+</mo><mi mathvariant="normal">Δ</mi><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mi>A</mi><mo>−</mo><mi>ρ</mi><mi>g</mi><mi>A</mi><mi mathvariant="normal">Δ</mi><mi>z</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p(z)A-p(z+\Delta z)A-\rho gA\Delta z=0</annotation></semantics></math></p>
+<p>Dividimos entre <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi mathvariant="normal">Δ</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">A\Delta z</annotation></semantics></math> y tomamos el límite cuando <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\Delta z</annotation></semantics></math> tiende a cero:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>p</mi></mrow><mrow><mi>d</mi><mi>z</mi></mrow></mfrac><mo>=</mo><mi>−</mi><mi>ρ</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">\frac{dp}{dz}=-\rho g</annotation></semantics></math></p>
+<p>El signo negativo significa que la presión disminuye cuando subimos en elevación.</p>
+</section>
+<section id="integración-entre-dos-puntos" class="level2">
+<h2 class="anchored" data-anchor-id="integración-entre-dos-puntos">3. Integración entre dos puntos</h2>
+<p>Para densidad aproximadamente constante:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>2</mn></msub><mo>−</mo><msub><mi>p</mi><mn>1</mn></msub><mo>=</mo><mi>ρ</mi><mi>g</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>z</mi><mn>1</mn></msub><mo>−</mo><msub><mi>z</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p_2-p_1=\rho g(z_1-z_2)</annotation></semantics></math></p>
+<p>Si el punto 1 está en la superficie libre abierta y el punto 2 se ubica a profundidad <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><msub><mi>z</mi><mn>1</mn></msub><mo>−</mo><msub><mi>z</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">h=z_1-z_2</annotation></semantics></math>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mn>2</mn><mo>,</mo><mi>m</mi><mi>a</mi><mi>n</mi></mrow></msub><mo>=</mo><mi>ρ</mi><mi>g</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">p_{2,man}=\rho gh</annotation></semantics></math></p>
+<section id="idea-clave" class="level3 idea">
+<h3 class="anchored" data-anchor-id="idea-clave">Idea clave</h3>
+<p>La profundidad <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math> se mide <strong>hacia abajo desde la superficie</strong>; la elevación <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math> crece hacia arriba desde un datum. Confundirlas cambia el signo.</p>
+</section>
+</section>
+<section id="presión-absoluta-atmosférica-y-manométrica" class="level2">
+<h2 class="anchored" data-anchor-id="presión-absoluta-atmosférica-y-manométrica">4. Presión absoluta, atmosférica y manométrica</h2>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi>a</mi><mi>b</mi><mi>s</mi></mrow></msub><mo>=</mo><msub><mi>p</mi><mrow><mi>a</mi><mi>t</mi><mi>m</mi></mrow></msub><mo>+</mo><msub><mi>p</mi><mrow><mi>m</mi><mi>a</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{abs}=p_{atm}+p_{man}</annotation></semantics></math></p>
+<p>Un manómetro común indica cero cuando está abierto a la atmósfera; por eso reporta presión manométrica. La presión absoluta nunca debe confundirse con la lectura del manómetro.</p>
+</section>
+<section id="altura-o-carga-de-presión" class="level2">
+<h2 class="anchored" data-anchor-id="altura-o-carga-de-presión">5. Altura o carga de presión</h2>
+<p>Dividir presión entre peso específico produce una longitud:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>p</mi></msub><mo>=</mo><mfrac><mi>p</mi><mrow><mi>ρ</mi><mi>g</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">h_p=\frac{p}{\rho g}</annotation></semantics></math></p>
+<p>Decir “150 kPa” y decir “15.3 m de columna de agua” son dos formas de expresar la misma capacidad de presión, si se usa agua con la densidad indicada.</p>
+</section>
+<section id="principios-de-stevin-y-pascal" class="level2">
+<h2 class="anchored" data-anchor-id="principios-de-stevin-y-pascal">6. Principios de Stevin y Pascal</h2>
+<p><strong>Stevin:</strong> en un líquido homogéneo en reposo, la presión depende de la diferencia vertical, no de la forma del recipiente.</p>
+<p><strong>Pascal:</strong> un cambio de presión aplicado a un fluido confinado se transmite sin disminución ideal a todos sus puntos. Esto explica prensas y actuadores hidráulicos; no significa que la energía se multiplique gratuitamente.</p>
+</section>
+<section id="ejemplo-resuelto-a-presión-en-el-fondo-de-un-tanque" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-resuelto-a-presión-en-el-fondo-de-un-tanque">7. Ejemplo resuelto A: presión en el fondo de un tanque</h2>
+<p><strong>Problema.</strong> Profundidad <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>2.80</mn></mrow><annotation encoding="application/x-tex">h=2.80</annotation></semantics></math> m. Estima la presión manométrica.</p>
+<div class="solucion">
+<p><strong>Datos:</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>=</mo><mn>998</mn><mspace width="0.222em"></mspace><msup><mtext mathvariant="normal">kg/m</mtext><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">\rho=998\ \text{kg/m}^3</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mn>9.81</mn><mspace width="0.222em"></mspace><msup><mtext mathvariant="normal">m/s</mtext><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">g=9.81\ \text{m/s}^2</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>2.80</mn></mrow><annotation encoding="application/x-tex">h=2.80</annotation></semantics></math> m.</p>
+<p><strong>Modelo:</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mi>ρ</mi><mi>g</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">p=\rho gh</annotation></semantics></math>.</p>
+<p><strong>Cálculo:</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>998</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>9.81</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>2.80</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>27</mn><mo>,</mo><mn>414</mn><mspace width="0.222em"></mspace><mtext mathvariant="normal">Pa</mtext><mo>=</mo><mn>27.4</mn><mspace width="0.222em"></mspace><mtext mathvariant="normal">kPa</mtext></mrow><annotation encoding="application/x-tex">p=(998)(9.81)(2.80)=27,414\ \text{Pa}=27.4\ \text{kPa}</annotation></semantics></math>.</p>
+<p><strong>Dimensiones:</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msup><mtext mathvariant="normal">kg/m</mtext><mn>3</mn></msup><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msup><mtext mathvariant="normal">m/s</mtext><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mtext mathvariant="normal">m</mtext><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mtext mathvariant="normal">kg/(m·s</mtext><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mtext mathvariant="normal">Pa</mtext></mrow><annotation encoding="application/x-tex">(\text{kg/m}^3)(\text{m/s}^2)(\text{m})=\text{kg/(m·s}^2)=\text{Pa}</annotation></semantics></math>.</p>
+<p><strong>Interpretación:</strong> el tanque aporta aproximadamente 27 kPa antes de descontar pérdidas cuando el agua comience a moverse.</p>
+</div>
+</section>
+<section id="ejemplo-resuelto-b-desnivel-entre-tanque-y-parcela" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-resuelto-b-desnivel-entre-tanque-y-parcela">8. Ejemplo resuelto B: desnivel entre tanque y parcela</h2>
+<p><strong>Problema.</strong> La superficie del tanque está 6.0 m sobre un punto de la tubería. Sin flujo y con ambos conectados por agua, ¿qué diferencia manométrica ideal existe?</p>
+<div class="solucion">
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi><mo>=</mo><mi>ρ</mi><mi>g</mi><mi mathvariant="normal">Δ</mi><mi>z</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>998</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>9.81</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>6.0</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>58.7</mn></mrow><annotation encoding="application/x-tex">\Delta p=\rho g\Delta z=(998)(9.81)(6.0)=58.7</annotation></semantics></math> kPa.</p>
+<p>La carga de presión equivalente es <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>ρ</mi><mi>g</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>6.0</mn></mrow><annotation encoding="application/x-tex">\Delta p/(\rho g)=6.0</annotation></semantics></math> m. Al regar, la presión disponible será menor debido a pérdidas y cambios de velocidad.</p>
+</div>
+</section>
+<section id="ejemplo-resuelto-c-prensa-hidráulica" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-resuelto-c-prensa-hidráulica">9. Ejemplo resuelto C: prensa hidráulica</h2>
+<p>Un pistón pequeño de diámetro 25 mm recibe 150 N; el grande mide 100 mm. Como <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>1</mn></msub><mi>/</mi><msub><mi>A</mi><mn>1</mn></msub><mo>=</mo><msub><mi>F</mi><mn>2</mn></msub><mi>/</mi><msub><mi>A</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">F_1/A_1=F_2/A_2</annotation></semantics></math> y el área depende de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>d</mi><mn>2</mn></msup><annotation encoding="application/x-tex">d^2</annotation></semantics></math>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>2</mn></msub><mo>=</mo><mn>150</mn><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>100</mn><mn>25</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>2400</mn><mspace width="0.222em"></mspace><mtext mathvariant="normal">N</mtext></mrow><annotation encoding="application/x-tex">F_2=150\left(\frac{100}{25}\right)^2=2400\ \text{N}</annotation></semantics></math></p>
+<p>El pistón grande se desplaza una distancia menor; la conservación de energía sigue cumpliéndose.</p>
+</section>
+<section id="práctica-presión-contra-profundidad" class="level2">
+<h2 class="anchored" data-anchor-id="práctica-presión-contra-profundidad">10. Práctica: presión contra profundidad</h2>
+<div class="practica">
+<p><strong>Materiales:</strong> botella transparente, tres orificios pequeños alineados verticalmente, cinta, agua, charola, regla y protección ocular.</p>
+<p><strong>Seguridad:</strong> perfora solo bajo supervisión; elimina bordes cortantes; trabaja sobre piso no resbaloso.</p>
+<p><strong>Procedimiento:</strong> tapa los orificios, llena; predice; destapa simultáneamente; mide alcance horizontal tres veces; registra altura bajo la superficie y alcance.</p>
+<p><strong>Análisis:</strong> grafica profundidad contra alcance. No uses el alcance como presión exacta: es un indicador cualitativo porque intervienen diámetro, trayectoria y pérdidas.</p>
+<p><strong>Alternativa:</strong> usa una simulación o un video tomado por el docente y analiza datos proporcionados.</p>
+</div>
+</section>
+<section id="errores-frecuentes" class="level2">
+<h2 class="anchored" data-anchor-id="errores-frecuentes">11. Errores frecuentes</h2>
+<div class="error">
+<ul>
+<li>Usar la longitud inclinada de una ladera en vez del desnivel vertical.</li>
+<li>Introducir kPa directamente en una ecuación que requiere Pa.</li>
+<li>Sumar presión atmosférica cuando el problema pide presión manométrica.</li>
+<li>Aplicar <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mi>ρ</mi><mi>g</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">p=\rho gh</annotation></semantics></math> a un sistema en flujo sin aclarar que es una aproximación estática.</li>
+</ul>
+</div>
+</section>
+<section id="ejercicios-graduados" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios-graduados">12. Ejercicios graduados</h2>
+<ol type="1">
+<li>Calcula la presión manométrica a 1.2, 2.4 y 3.6 m de profundidad.</li>
+<li>Convierte 150 kPa a metros de columna de agua.</li>
+<li>Dos puntos de una tubería llena y en reposo difieren 4.5 m de elevación. Calcula <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi>b</mi><mi>a</mi><mi>j</mi><mi>o</mi></mrow></msub><mo>−</mo><msub><mi>p</mi><mrow><mi>a</mi><mi>l</mi><mi>t</mi><mi>o</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{bajo}-p_{alto}</annotation></semantics></math>.</li>
+<li>Explica por qué tres tanques de formas distintas producen igual presión en el fondo si tienen igual profundidad.</li>
+<li>Un emisor requiere 100 kPa. ¿Qué desnivel estático ideal se necesitaría? ¿Por qué en campo se requeriría más?</li>
+</ol>
+<details>
+<summary>
+<strong>Respuestas para autoestudio</strong>
+</summary>
+<ol type="1">
+<li>11.75, 23.49 y 35.24 kPa. 2. 15.32 m. 3. 44.05 kPa. 4. La ecuación depende de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math> y diferencia vertical. 5. 10.22 m ideales; en campo se suman pérdidas y requisitos de operación.</li>
+</ol>
+</details>
+</section>
+<section id="comprobación-final" class="level2">
+<h2 class="anchored" data-anchor-id="comprobación-final">13. Comprobación final</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Puedo derivar el signo de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>p</mi><mi>/</mi><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">dp/dz</annotation></semantics></math> con un balance de fuerzas.</label></li>
+<li><label><input type="checkbox">Distingo profundidad <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math> de elevación <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>.</label></li>
+<li><label><input type="checkbox">Convierto presión a altura de agua.</label></li>
+<li><label><input type="checkbox">Explico la diferencia entre condición estática e instalación operando.</label></li>
+</ul>
+</section>
+<section id="referencias-y-ampliación" class="level2">
+<h2 class="anchored" data-anchor-id="referencias-y-ampliación">Referencias y ampliación</h2>
+<ul>
+<li>U.S. Department of Agriculture, Natural Resources Conservation Service. <em>National Engineering Handbook, Part 652: Irrigation Guide</em>. https://www.nrcs.usda.gov/sites/default/files/2022-08/PA%20Irrigation%20Guide.pdf</li>
+<li>Food and Agriculture Organization of the United Nations. <em>Pressurized Irrigation Techniques</em>. https://www.fao.org/4/a1336e/a1336e00.htm</li>
+<li>U.S. Bureau of Reclamation. <em>Design Standards</em>. https://www.usbr.gov/tsc/techreferences/designstandards-datacollectionguides/designstandards.html</li>
+<li>OpenStax. <em>University Physics, Volume 1: Pascal’s Principle and Hydraulics</em>. https://openstax.org/books/university-physics-volume-1/pages/14-3-pascals-principle-and-hydraulics</li>
+</ul>
+<p><strong>Nota didáctica:</strong> los parámetros numéricos de ejemplos son datos de aprendizaje. Para seleccionar, operar o mantener equipo real deben consultarse el fabricante, las normas aplicables y las condiciones del sitio.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
