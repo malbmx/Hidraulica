@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">De masa a presión: cadena de magnitudes</title><desc id="desc">De masa a presión: cadena de magnitudes</desc>
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#0b4f6c"/></marker><linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dff4fb"/><stop offset="1" stop-color="#168aad"/></linearGradient></defs>
+<rect width="1200" height="675" fill="#ffffff"/><text x="60" y="62" font-family="Arial" font-size="34" font-weight="700" fill="#0b4f6c">De masa a presión: cadena de magnitudes</text>
+
+      <rect x="70" y="220" width="230" height="145" rx="12" fill="#eef7ff" stroke="#168aad" stroke-width="3"/><rect x="350" y="220" width="230" height="145" rx="12" fill="#eef7ff" stroke="#168aad" stroke-width="3"/><rect x="630" y="220" width="230" height="145" rx="12" fill="#eef7ff" stroke="#168aad" stroke-width="3"/><rect x="910" y="220" width="220" height="145" rx="12" fill="#eef7ff" stroke="#168aad" stroke-width="3"/>
+      <text x="185" y="270" font-family="Arial" font-size="30" font-weight="700" fill="#0b4f6c" text-anchor="middle">Masa</text><text x="185" y="325" font-family="Arial" font-size="28" font-weight="400" fill="#173042" text-anchor="middle">m [kg]</text>
+      <text x="465" y="270" font-family="Arial" font-size="30" font-weight="700" fill="#0b4f6c" text-anchor="middle">Densidad</text><text x="465" y="325" font-family="Arial" font-size="28" font-weight="400" fill="#173042" text-anchor="middle">ρ = m/V</text>
+      <text x="745" y="270" font-family="Arial" font-size="28" font-weight="700" fill="#0b4f6c" text-anchor="middle">Peso específico</text><text x="745" y="325" font-family="Arial" font-size="28" font-weight="400" fill="#173042" text-anchor="middle">γ = ρg</text>
+      <text x="1020" y="270" font-family="Arial" font-size="30" font-weight="700" fill="#0b4f6c" text-anchor="middle">Presión</text><text x="1020" y="325" font-family="Arial" font-size="28" font-weight="400" fill="#173042" text-anchor="middle">p = F/A</text>
+      <line x1="300" y1="292" x2="340" y2="292" stroke="#0b4f6c" stroke-width="4" marker-end="url(#arr)" /><line x1="580" y1="292" x2="620" y2="292" stroke="#0b4f6c" stroke-width="4" marker-end="url(#arr)" /><line x1="860" y1="292" x2="900" y2="292" stroke="#0b4f6c" stroke-width="4" marker-end="url(#arr)" />
+      <text x="590" y="480" font-family="Arial" font-size="30" font-weight="700" fill="#2f7d32" text-anchor="middle">Las unidades permiten comprobar cada relación</text>
+<text x="60" y="642" font-family="Arial" font-size="16" fill="#526875">Hidráulica aplicada a la Agronomía · Miguel Armando López Beltrán · 2026</text>
+</svg>

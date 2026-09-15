@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Agua a ambos lados: fuerzas y momentos con signo</title><desc id="desc">Agua a ambos lados: fuerzas y momentos con signo</desc>
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#0b4f6c"/></marker><linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dff4fb"/><stop offset="1" stop-color="#168aad"/></linearGradient></defs>
+<rect width="1200" height="675" fill="#ffffff"/><text x="60" y="62" font-family="Arial" font-size="34" font-weight="700" fill="#0b4f6c">Agua a ambos lados: fuerzas y momentos con signo</text>
+
+      <rect x="545" y="165" width="55" height="405" fill="#607d8b"/><rect x="120" y="220" width="425" height="350" fill="url(#water)"/><rect x="600" y="390" width="360" height="180" fill="#8ecae6"/>
+      <line x1="115" y1="220" x2="545" y2="220" stroke="#168aad" stroke-width="4"  /><line x1="600" y1="390" x2="965" y2="390" stroke="#168aad" stroke-width="4"  />
+      <line x1="310" y1="405" x2="500" y2="405" stroke="#0b4f6c" stroke-width="7" marker-end="url(#arr)" /><text x="300" y="385" font-family="Arial" font-size="31" font-weight="700" fill="#0b4f6c" text-anchor="end">FL</text><line x1="830" y1="485" x2="645" y2="485" stroke="#c62828" stroke-width="7" marker-end="url(#arr)" /><text x="840" y="465" font-family="Arial" font-size="31" font-weight="700" fill="#c62828" text-anchor="start">FR</text>
+      <text x="570" y="610" font-family="Arial" font-size="31" font-weight="700" fill="#173042" text-anchor="middle">Fneta = FL − FR;  Mneta = Σ(Fd) con signo</text>
+<text x="60" y="642" font-family="Arial" font-size="16" fill="#526875">Hidráulica aplicada a la Agronomía · Miguel Armando López Beltrán · 2026</text>
+</svg>

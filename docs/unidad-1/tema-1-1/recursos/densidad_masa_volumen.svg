@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Densidad: masa contenida en un volumen</title><desc id="desc">Densidad: masa contenida en un volumen</desc>
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#0b4f6c"/></marker><linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dff4fb"/><stop offset="1" stop-color="#168aad"/></linearGradient></defs>
+<rect width="1200" height="675" fill="#ffffff"/><text x="60" y="62" font-family="Arial" font-size="34" font-weight="700" fill="#0b4f6c">Densidad: masa contenida en un volumen</text>
+
+      <rect x="100" y="150" width="310" height="330" rx="12" fill="#e8f5e9" stroke="#2f7d32" stroke-width="3"/><rect x="165" y="215" width="180" height="180" fill="url(#water)" stroke="#0b4f6c" stroke-width="4"/>
+      <text x="255" y="310" font-family="Arial" font-size="54" font-weight="700" fill="#ffffff" text-anchor="middle">V</text><text x="255" y="525" font-family="Arial" font-size="24" font-weight="700" fill="#2f7d32" text-anchor="middle">Porción de líquido</text>
+      <line x1="450" y1="315" x2="610" y2="315" stroke="#0b4f6c" stroke-width="5" marker-end="url(#arr)" /><rect x="650" y="180" width="430" height="270" rx="12" fill="#fff3e0" stroke="#e8871e" stroke-width="3"/>
+      <text x="865" y="255" font-family="Arial" font-size="46" font-weight="700" fill="#0b4f6c" text-anchor="middle">ρ = m / V</text><text x="865" y="320" font-family="Arial" font-size="34" font-weight="400" fill="#173042" text-anchor="middle">m = ρV</text><text x="865" y="375" font-family="Arial" font-size="30" font-weight="400" fill="#173042" text-anchor="middle">kg/m³</text>
+      <text x="865" y="520" font-family="Arial" font-size="24" font-weight="700" fill="#2f7d32" text-anchor="middle">Mismo volumen + mayor ρ = mayor masa</text>
+<text x="60" y="642" font-family="Arial" font-size="16" fill="#526875">Hidráulica aplicada a la Agronomía · Miguel Armando López Beltrán · 2026</text>
+</svg>

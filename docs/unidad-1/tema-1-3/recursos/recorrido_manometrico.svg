@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Recorrido manométrico: bajar suma, subir resta</title><desc id="desc">Recorrido manométrico: bajar suma, subir resta</desc>
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#0b4f6c"/></marker><linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dff4fb"/><stop offset="1" stop-color="#168aad"/></linearGradient></defs>
+<rect width="1200" height="675" fill="#ffffff"/><text x="60" y="62" font-family="Arial" font-size="34" font-weight="700" fill="#0b4f6c">Recorrido manométrico: bajar suma, subir resta</text>
+
+      <path d="M210 210 L210 470 Q210 530 270 530 L420 530 Q480 530 480 470 L480 320" fill="none" stroke="#168aad" stroke-width="45"/>
+      <path d="M480 470 Q480 530 540 530 L690 530 Q750 530 750 470 L750 210" fill="none" stroke="#8d2d75" stroke-width="45"/>
+      <text x="170" y="195" font-family="Arial" font-size="34" font-weight="700" fill="#173042" text-anchor="start">A</text><text x="785" y="195" font-family="Arial" font-size="34" font-weight="700" fill="#173042" text-anchor="start">B</text><line x1="300" y1="250" x2="300" y2="430" stroke="#0b4f6c" stroke-width="5" marker-end="url(#arr)" /><text x="320" y="345" font-family="Arial" font-size="27" font-weight="700" fill="#173042" text-anchor="start">+ρgΔh</text>
+      <line x1="650" y1="435" x2="650" y2="260" stroke="#0b4f6c" stroke-width="5" marker-end="url(#arr)" /><text x="670" y="345" font-family="Arial" font-size="27" font-weight="700" fill="#173042" text-anchor="start">−ρmgΔh</text>
+      <text x="600" y="595" font-family="Arial" font-size="30" font-weight="700" fill="#2f7d32" text-anchor="middle">En cada interfaz, la presión es continua</text>
+<text x="60" y="642" font-family="Arial" font-size="16" fill="#526875">Hidráulica aplicada a la Agronomía · Miguel Armando López Beltrán · 2026</text>
+</svg>

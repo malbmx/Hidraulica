@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Elemento diferencial en equilibrio</title><desc id="desc">Elemento diferencial en equilibrio</desc>
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#0b4f6c"/></marker><linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dff4fb"/><stop offset="1" stop-color="#168aad"/></linearGradient></defs>
+<rect width="1200" height="675" fill="#ffffff"/><text x="60" y="62" font-family="Arial" font-size="34" font-weight="700" fill="#0b4f6c">Elemento diferencial en equilibrio</text>
+
+      <rect x="420" y="180" width="360" height="300" fill="url(#water)" stroke="#0b4f6c" stroke-width="4"/>
+      <line x1="600" y1="120" x2="600" y2="175" stroke="#0b4f6c" stroke-width="6" marker-end="url(#arr)" /><text x="625" y="145" font-family="Arial" font-size="27" font-weight="700" fill="#173042" text-anchor="start">p(z+Δz)A</text>
+      <line x1="600" y1="540" x2="600" y2="485" stroke="#0b4f6c" stroke-width="6" marker-end="url(#arr)" /><text x="625" y="535" font-family="Arial" font-size="27" font-weight="700" fill="#173042" text-anchor="start">p(z)A</text>
+      <line x1="600" y1="280" x2="600" y2="410" stroke="#c62828" stroke-width="7" marker-end="url(#arr)" /><text x="625" y="350" font-family="Arial" font-size="27" font-weight="700" fill="#c62828" text-anchor="start">ρgAΔz</text>
+      <line x1="350" y1="180" x2="350" y2="480" stroke="#607d8b" stroke-width="3"  /><text x="325" y="335" font-family="Arial" font-size="28" font-weight="700" fill="#607d8b" text-anchor="middle">Δz</text>
+      <text x="600" y="585" font-family="Arial" font-size="34" font-weight="700" fill="#0b4f6c" text-anchor="middle">ΣFz = 0  ⇒  dp/dz = −ρg</text>
+<text x="60" y="642" font-family="Arial" font-size="16" fill="#526875">Hidráulica aplicada a la Agronomía · Miguel Armando López Beltrán · 2026</text>
+</svg>
