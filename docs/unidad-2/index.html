@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unidad II de Hidráulica aplicada a la Agronomía: cuatro capítulos visuales sobre velocidad, tipos de flujo, líneas de corriente y caudal.">
+  <title>Unidad II · Hidrocinemática | Hidráulica para Agronomía</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <p class="breadcrumb"><a href="../">← Índice del libro</a></p>
+    <p class="eyebrow">Hidráulica aplicada a la Agronomía</p>
+    <h1>Unidad II · Hidrocinemática</h1>
+    <p class="chapter-intro">Sigue el movimiento del agua desde una partícula hasta el volumen que atraviesa una toma de riego. Cuatro capítulos conectan la observación, los esquemas, las ecuaciones y la práctica.</p>
+    <nav aria-label="Accesos de la unidad"><a href="#temas">Explorar los cuatro temas</a><a href="#caso">Caso integrador</a><a href="#fuentes">Bibliografía</a></nav>
+  </header>
+  <main>
+    <section id="inicio">
+      <h2>Una ruta desde la intuición hasta el caudal</h2>
+      <p class="lead">En un canal podemos seguir una partícula, pero para saber cuánta agua llega a una parcela necesitamos observar también la sección transversal y el tiempo de entrega. Esta unidad explica qué mide cada concepto y qué información todavía falta para tomar una decisión de riego.</p>
+      <div class="grid"><div class="card"><p class="tag">Antes de empezar</p><p>Recuerda que 1 m³ = 1000 L, 1 min = 60 s, el área rectangular es ancho × altura y el área circular es πr². Usa unidades en cada paso.</p></div><div class="card"><p class="tag">Cómo estudiar</p><p>En cada capítulo: observa el dibujo, explica el fenómeno con tus palabras, identifica símbolos y unidades, sigue el ejemplo resuelto y después intenta la práctica.</p></div></div>
+    </section>
+    <section id="temas" aria-labelledby="temas-title">
+      <h2 id="temas-title">Temas de la unidad</h2>
+      <div class="unit-grid">
+        <article class="unit-card">
+          <svg viewBox="0 0 480 200" role="img" aria-label="Trazador en tres posiciones dentro de un canal"><rect width="480" height="200" fill="#d7f0f4"/><path d="M25 60H455M25 140H455" stroke="#277d9b" stroke-width="6"/><path d="M30 100H450" stroke="#7ec6d9" stroke-width="75"/><circle cx="100" cy="100" r="15" fill="#1b704d"/><circle cx="240" cy="100" r="15" fill="#1b704d"/><circle cx="380" cy="100" r="15" fill="#1b704d"/><text x="72" y="45" font-size="21" fill="#16342e">t₁</text><text x="212" y="45" font-size="21" fill="#16342e">t₂</text><text x="352" y="45" font-size="21" fill="#16342e">t₃</text></svg>
+          <div class="unit-card-body"><span class="tag">Tema 2.1</span><h3>Velocidad y aceleración</h3><p>De posición y tiempo a velocidad y cambio de velocidad, con trazadores y gráficas.</p><a href="tema-2-1/">Abrir tema</a></div>
+        </article>
+        <article class="unit-card">
+          <svg viewBox="0 0 480 200" role="img" aria-label="Matriz que compara cambios en el tiempo y el espacio"><rect width="480" height="200" fill="#eaf2e9"/><path d="M70 25V175M250 25V175M430 25V175M70 25H430M70 100H430M70 175H430" stroke="#246f58" stroke-width="5"/><text x="110" y="74" font-size="24" fill="#16342e">tiempo</text><text x="295" y="74" font-size="24" fill="#16342e">espacio</text><text x="106" y="150" font-size="23" fill="#16342e">t₁ → t₂</text><text x="295" y="150" font-size="23" fill="#16342e">P → Q</text></svg>
+          <div class="unit-card-body"><span class="tag">Tema 2.2</span><h3>Clasificación de los flujos</h3><p>Distingue cambios temporales y espaciales sin confundir permanente con uniforme.</p><a href="tema-2-2/">Abrir tema</a></div>
+        </article>
+        <article class="unit-card">
+          <svg viewBox="0 0 480 200" role="img" aria-label="Líneas de corriente curvadas en una bifurcación"><rect width="480" height="200" fill="#e8f5f8"/><path d="M20 100C150 100 210 105 280 62S400 25 460 20M20 105C150 105 215 100 280 145S400 175 460 180" fill="none" stroke="#1b779b" stroke-width="7"/><path d="M95 100h45m-12-12 12 12-12 12M325 40l42-10m-12-8 12 8-9 13M325 157l42 14m-12-21 12 21-20 7" fill="none" stroke="#168055" stroke-width="5"/></svg>
+          <div class="unit-card-body"><span class="tag">Tema 2.3</span><h3>Líneas de corriente</h3><p>Interpreta flechas, líneas instantáneas y trayectorias en una bifurcación.</p><a href="tema-2-3/">Abrir tema</a></div>
+        </article>
+        <article class="unit-card">
+          <svg viewBox="0 0 480 200" role="img" aria-label="Sección de canal dividida en franjas para calcular caudal"><rect width="480" height="200" fill="#e5f3f7"/><rect x="45" y="32" width="390" height="136" fill="#b9e4ec" stroke="#1c7495" stroke-width="5"/><path d="M142 32V168M239 32V168M336 32V168" stroke="#1c7495" stroke-width="3" stroke-dasharray="8 7"/><text x="95" y="109" font-size="24" fill="#164b60">A₁</text><text x="192" y="109" font-size="24" fill="#164b60">A₂</text><text x="289" y="109" font-size="24" fill="#164b60">A₃</text><text x="386" y="109" font-size="24" fill="#164b60">A₄</text></svg>
+          <div class="unit-card-body"><span class="tag">Tema 2.4</span><h3>Gasto o caudal</h3><p>Deriva Q = Av, calcula por franjas y diferencia L/s de volumen entregado.</p><a href="tema-2-4/">Abrir tema</a></div>
+        </article>
+      </div>
+    </section>
+    <section id="caso" class="callout" aria-labelledby="caso-title">
+      <h2 id="caso-title">Caso integrador · una toma de riego</h2>
+      <p>Elabora un croquis de la toma y registra tres ensayos de volumen y tiempo en condiciones seguras. Calcula el caudal de cada ensayo, la media y el volumen entregado durante un turno de duración conocida. Si trabajas con datos proporcionados, indícalo. Explica por qué una velocidad superficial o una sola medición no garantizan el caudal total ni la uniformidad del riego.</p>
+      <p>Si no dispones de una salida segura de baja presión, usa esta serie didáctica: recipiente de 20 L; tiempos de llenado de 8.0 s, 8.4 s y 7.8 s; turno hipotético de 30 min. Distingue la variación observada de la suposición de caudal constante durante el turno.</p>
+    </section>
+    <section id="fuentes" aria-labelledby="fuentes-title"><h2 id="fuentes-title">Bibliografía y procedencia</h2><p>La organización conceptual se fundamenta en Gilberto Sotelo Ávila, <em>Hidráulica general, volumen 1: Fundamentos</em>, capítulo 3, del ejemplar consultado por el autor. Los esquemas y datos de ejemplo de este sitio se elaboraron para fines didácticos.</p><ul><li><a href="https://openstax.org/books/f%C3%ADsica-universitaria-volumen-1/pages/3-1-posicion-desplazamiento-y-velocidad-media">OpenStax · posición, desplazamiento y velocidad media</a> y <a href="https://openstax.org/books/f%C3%ADsica-universitaria-volumen-1/pages/3-3-aceleracion-media-e-instantanea">aceleración</a>.</li><li><a href="https://openstax.org/books/f%C3%ADsica-universitaria-volumen-1/pages/14-5-dinamicas-de-fluidos">OpenStax · dinámica de fluidos</a>, para caudal y velocidad media.</li><li><a href="https://www.usbr.gov/tsc/techreferences/mands/wmm.html">U.S. Bureau of Reclamation, <em>Water Measurement Manual</em></a>, 3.ª edición de 1997 y reimpresión revisada de 2001.</li><li><a href="https://www.usgs.gov/water-science-school/science/how-streamflow-measured">USGS Water Science School, <em>How Streamflow is Measured</em></a>, 17 de septiembre de 2026.</li><li><a href="https://doi.org/10.3133/tm3A8">Turnipseed y Sauer (2010), <em>Discharge measurements at gaging stations</em></a>, DOI 10.3133/tm3A8.</li></ul></section>
+  </main>
+  <footer>Autor: Miguel Armando López Beltrán · 2026 · Hidráulica para Agronomía</footer>
+</body>
+</html>

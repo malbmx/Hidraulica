@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unidad II de Hidráulica para Agronomía, tema 2.4: Gasto o caudal. Explicaciones visuales, ecuaciones y ejercicios para principiantes.">
+  <title>2.4 Gasto o caudal | Hidráulica para Agronomía</title>
+  <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+  <header>
+    <p class="breadcrumb"><a href="../../">Libro</a> / <a href="../">Unidad II</a> / Tema 2.4</p>
+    <p class="eyebrow">Hidráulica aplicada a la Agronomía</p>
+    <h1>Unidad II · Hidrocinemática</h1>
+    <p class="chapter-intro">Capítulo 2.4: Gasto o caudal. Observa el fenómeno, comprende la ecuación y aplica lo aprendido.</p>
+    <nav class="chapter-nav" aria-label="Temas de la unidad II">
+      <a href="../tema-2-1/">2.1 Velocidad y aceleración</a>
+      <a href="../tema-2-2/">2.2 Clasificación de los flujos</a>
+      <a href="../tema-2-3/">2.3 Líneas de corriente</a>
+      <a href="../tema-2-4/" aria-current="page">2.4 Gasto o caudal</a>
+    </nav>
+  </header>
+  <main>
+    <section id="tema24" aria-labelledby="t24-title">
+      <h2 id="t24-title">2.4 · Gasto o caudal</h2>
+      <p class="question"><strong>Pregunta de riego:</strong> ¿cuántos litros atraviesan la toma cada segundo y cuántos se entregaron durante el turno completo?</p>
+      <p>Si recogemos un volumen ΔV durante un tiempo Δt, el <strong>caudal volumétrico medio</strong> es:</p>
+      <p class="eq" aria-label="Caudal medio igual a volumen recolectado entre tiempo">Q<sub>medio</sub> = ΔV / Δt</p>
+      <p>Q se expresa en m³/s o L/s. No confundas L/s, una tasa, con L, un volumen acumulado. Cuando una velocidad <strong>normal a la sección y uniforme</strong> transporta agua durante Δt, el volumen es un prisma de base A y longitud vΔt:</p>
+      <p class="eq" aria-label="Volumen igual a área por velocidad por tiempo; por ello caudal igual a área por velocidad media">ΔV = A(vΔt) &nbsp;→&nbsp; Q = Av</p>
+      <p>En la realidad la velocidad varía entre el centro y los bordes. Definimos la velocidad media de la sección como v<sub>media</sub> = Q/A; así, <strong>Q = Av<sub>media</sub></strong>. Si hay subáreas con velocidades representativas distintas, aproximamos Q ≈ Σ A<sub>i</sub>v<sub>i</sub>. Comprobación de unidades: m² × m/s = m³/s.</p>
+      <figure class="visual"><svg viewBox="0 0 850 300" role="img" aria-labelledby="v24-title v24-desc"><title id="v24-title">Caudal a través de un canal dividido en franjas</title><desc id="v24-desc">La sección rectangular de un canal tiene cuatro franjas verticales. Cada franja posee un área A sub i y velocidad representativa v sub i. La suma de sus productos aproxima el caudal total.</desc><rect x="75" y="45" width="700" height="200" fill="#c6eaf2" stroke="#176f92" stroke-width="5"/><path d="M250 45V245M425 45V245M600 45V245" stroke="#176f92" stroke-width="3" stroke-dasharray="12 8"/><g fill="#176f92"><path d="M125 145h60l-12-10m12 10-12 10M300 145h80l-12-10m12 10-12 10M475 145h90l-12-10m12 10-12 10M655 145h65l-12-10m12 10-12 10" stroke="#176f92" stroke-width="5" fill="none"/></g><g fill="#153b36" font-family="system-ui" font-size="22" text-anchor="middle"><text x="163" y="95">A₁, v₁</text><text x="338" y="95">A₂, v₂</text><text x="513" y="95">A₃, v₃</text><text x="688" y="95">A₄, v₄</text><text x="425" y="283">Q ≈ A₁v₁ + A₂v₂ + A₃v₃ + A₄v₄</text></g></svg><figcaption class="caption">Esquema didáctico. Medir solo la velocidad superficial o central no representa automáticamente la media de toda la sección.</figcaption></figure>
+      <div class="example"><h3>Ejemplo resuelto · salida de una toma</h3><ol class="steps"><li>Un recipiente de 20 L se llena en 8.0 s. Q<sub>medio</sub> = 20/8.0 = 2.5 L/s.</li><li>Convierte: 2.5 L/s × (1 m³/1000 L) = 0.0025 m³/s.</li><li>Si ese caudal se mantuviera 30 min, V = QΔt = 2.5 L/s × 1800 s = 4500 L = 4.5 m³.</li><li>Interpreta: el volumen calculado depende de que el caudal permanezca aproximadamente constante durante el turno; tres ensayos y registro durante la operación ayudarían a comprobarlo.</li></ol></div>
+      <p>Si Q cambia, suma los volúmenes de intervalos cortos: V ≈ Σ Q<sub>i</sub>Δt<sub>i</sub>. En una gráfica Q contra t, esta suma corresponde al área bajo la curva. No es una ecuación de presión ni prueba por sí sola que el agua se distribuyó uniformemente entre cultivos.</p>
+      <p class="practice"><strong>Practica:</strong> una tubería tiene diámetro <em>interno</em> de 8 cm y velocidad <em>media de la sección</em> de 0.60 m/s. Convierte el radio a metros, calcula A = πr², luego Q en m³/s y L/s. Dibuja qué diámetro utilizaste y explica qué cambiaría si la velocidad fuese solo superficial.</p>
+    </section>
+    <section aria-labelledby="aplicaciones24-title">
+      <h2 id="aplicaciones24-title">De la fórmula a dos situaciones de riego</h2>
+      <div class="example"><h3>Ejemplo 2 · tubería circular</h3><ol class="steps"><li>Datos didácticos: diámetro <em>interno</em> d = 0.10 m; velocidad <em>media de la sección</em> = 0.80 m/s.</li><li>Radio r = d/2 = 0.05 m; área A = π(0.05 m)² ≈ 0.00785 m².</li><li>Q = Av<sub>media</sub> ≈ 0.00785 m² × 0.80 m/s = 0.00628 m³/s = 6.28 L/s.</li><li>Interpretación: se estima el volumen por segundo que cruza esa sección bajo los supuestos dados; no se deduce presión ni uniformidad de aplicación en la parcela.</li></ol></div>
+      <div class="example"><h3>Ejemplo 3 · canal dividido en tres franjas</h3><p>Áreas: 0.12; 0.18 y 0.10 m². Velocidades <em>representativas de cada franja</em>: 0.25; 0.40 y 0.30 m/s. Se obtiene Q ≈ (0.12×0.25) + (0.18×0.40) + (0.10×0.30) = 0.132 m³/s = 132 L/s. El cálculo enseña la suma por subáreas; un aforo real requiere ubicación de mediciones, instrumento y protocolo adecuados.</p></div>
+      <h3>Cuando el caudal cambia con el tiempo</h3>
+      <p>El volumen se suma intervalo por intervalo. Si una toma entrega 2 L/s durante 10 min, luego 3 L/s durante 10 min y finalmente 1 L/s durante 10 min, convierte primero cada intervalo a 600 s:</p>
+      <p class="eq">V ≈ Σ Q<sub>i</sub>Δt<sub>i</sub> = 2×600 + 3×600 + 1×600 = 3600 L = 3.6 m³</p>
+      <figure class="visual"><svg viewBox="0 0 760 300" role="img" aria-labelledby="graf24-title graf24-desc"><title id="graf24-title">Caudal variable durante tres intervalos</title><desc id="graf24-desc">Gráfica escalonada: dos litros por segundo en los primeros diez minutos, tres en los siguientes diez y uno en los últimos diez. El área de los tres rectángulos representa 3600 litros.</desc><path d="M70 30V235H710" fill="none" stroke="#173b35" stroke-width="4"/><rect x="90" y="115" width="190" height="120" fill="#7cc6d6"/><rect x="280" y="55" width="190" height="180" fill="#4ba8c1"/><rect x="470" y="175" width="190" height="60" fill="#a8dbe4"/><g font-family="system-ui" font-size="19" fill="#173b35"><text x="15" y="62">3</text><text x="15" y="120">2</text><text x="15" y="180">1</text><text x="13" y="260">Q (L/s)</text><text x="78" y="268">0</text><text x="270" y="268">10</text><text x="460" y="268">20</text><text x="645" y="268">30 min</text></g></svg><figcaption class="caption">El área bajo cada escalón es caudal × tiempo; para obtener litros, convierte minutos a segundos.</figcaption></figure>
+      <details><summary>Orientación para la práctica de la tubería</summary><p>Con d = 8 cm, r = 0.04 m, A ≈ 0.00503 m² y Q ≈ 3.02 L/s. Si 0.60 m/s fuera solo una velocidad superficial o puntual, no podrías usarla como v<sub>media</sub> sin información adicional.</p></details>
+    </section>
+    <aside class="callout" aria-label="Continuar estudiando"><strong>Continúa la ruta:</strong> <a href="../tema-2-3/">← Tema 2.3</a> · <a href="../">Portada de la unidad →</a>. Consulta la <a href="../#fuentes">bibliografía de la unidad</a> para profundizar.</aside>
+  </main>
+  <footer>Autor: Miguel Armando López Beltrán · 2026 · Hidráulica para Agronomía</footer>
+</body>
+</html>

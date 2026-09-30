@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unidad III de Hidráulica aplicada a la Agronomía: aspectos esenciales, continuidad, Euler, Bernoulli y cantidad de movimiento.">
+  <title>Unidad III · Hidrodinámica | Hidráulica para Agronomía</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <p class="breadcrumb"><a href="../">← Índice del libro</a></p>
+    <p class="eyebrow">Hidráulica aplicada a la Agronomía</p>
+    <h1>Unidad III · Hidrodinámica</h1>
+    <p class="chapter-intro">Analiza cómo se conservan la masa, la energía y la cantidad de movimiento en depósitos, tuberías, bombas, codos y salidas de riego. Cinco capítulos conectan el sistema físico, el modelo matemático, las operaciones y la decisión agrícola.</p>
+    <nav aria-label="Accesos de la unidad"><a href="#temas">Explorar los cinco temas</a><a href="#metodo">Método de resolución</a><a href="#fuentes">Bibliografía</a></nav>
+  </header>
+  <main>
+    <section id="inicio">
+      <h2>De observar el sistema a justificar el resultado</h2>
+      <p class="lead">Antes de sustituir números, dibuja la instalación, delimita el volumen de control, marca entradas y salidas y decide qué principio de conservación responde la pregunta. Conserva unidades, signos y referencias durante todo el procedimiento.</p>
+      <div class="grid">
+        <div class="card"><p class="tag">Antes de empezar</p><p>Recuerda que 1 L/s = 0.001 m³/s, que el área circular se calcula con el diámetro interno y que presión, carga y energía específica no son la misma magnitud.</p></div>
+        <div class="card"><p class="tag">Cómo estudiar</p><p>Observa el visual, relaciona cada término de la ecuación con el sistema físico, sigue el ejemplo resuelto y después usa el formato de operaciones para resolver un caso equivalente.</p></div>
+      </div>
+    </section>
+    <section id="temas" aria-labelledby="temas-title">
+      <h2 id="temas-title">Temas de la unidad</h2>
+      <div class="unit-grid">
+        <article class="unit-card">
+          <svg viewBox="0 0 480 200" role="img" aria-label="Depósito, tubería y parcela delimitados como volumen de control"><rect width="480" height="200" fill="#e8f5f8"/><rect x="35" y="55" width="105" height="90" fill="#d7edf5" stroke="#176e93" stroke-width="5"/><path d="M140 100H330" stroke="#176e93" stroke-width="22"/><rect x="330" y="65" width="115" height="70" rx="12" fill="#edf6e9" stroke="#2f7d32" stroke-width="5"/><path d="M172 100h105m-20-16 20 16-20 16" fill="none" stroke="#2f7d32" stroke-width="6"/><path d="M20 25H460V175H20Z" fill="none" stroke="#6b46c1" stroke-width="4" stroke-dasharray="10 8"/></svg>
+          <div class="unit-card-body"><span class="tag">Tema 3.1</span><h3>Aspectos esenciales</h3><p>Sistema, volumen de control, fuerzas, referencias y elección del principio físico.</p><a href="tema-3-1/">Abrir tema</a></div>
+        </article>
+        <article class="unit-card">
+          <svg viewBox="0 0 480 200" role="img" aria-label="Tubería que se contrae y aumenta la velocidad"><rect width="480" height="200" fill="#e7f4f7"/><path d="M30 55H210L285 82H450M30 145H210L285 118H450" fill="none" stroke="#176e93" stroke-width="8"/><path d="M60 100h115m-20-16 20 16-20 16M315 100h100m-20-16 20 16-20 16" fill="none" stroke="#2f7d32" stroke-width="6"/><text x="85" y="45" font-size="24" fill="#173042">A₁V₁</text><text x="340" y="72" font-size="24" fill="#173042">A₂V₂</text></svg>
+          <div class="unit-card-body"><span class="tag">Tema 3.2</span><h3>Continuidad</h3><p>Balance de masa, cambios de sección, ramificaciones y explorador área–velocidad.</p><a href="tema-3-2/">Abrir tema</a></div>
+        </article>
+        <article class="unit-card">
+          <svg viewBox="0 0 480 200" role="img" aria-label="Elemento diferencial con fuerzas de presión y peso"><rect width="480" height="200" fill="#f4f0fb"/><path d="M155 62L330 45L350 135L175 152Z" fill="#dff4fb" stroke="#176e93" stroke-width="5"/><path d="M85 107h70m-20-16 20 16-20 16M420 90h-75m20-16-20 16 20 16" fill="none" stroke="#6b46c1" stroke-width="7"/><path d="M255 95v72m-14-20 14 20 14-20" fill="none" stroke="#e8871e" stroke-width="7"/><text x="45" y="78" font-size="23" fill="#173042">pA</text><text x="390" y="62" font-size="23" fill="#173042">p+dp</text><text x="272" y="183" font-size="22" fill="#173042">peso</text></svg>
+          <div class="unit-card-body"><span class="tag">Tema 3.3</span><h3>Ecuación de Euler</h3><p>Segunda ley de Newton sobre un elemento fluido y transición hacia Bernoulli.</p><a href="tema-3-3/">Abrir tema</a></div>
+        </article>
+        <article class="unit-card">
+          <svg viewBox="0 0 480 200" role="img" aria-label="Líneas piezométrica y de energía sobre una tubería"><rect width="480" height="200" fill="#e8f5f8"/><path d="M35 145H445" stroke="#176e93" stroke-width="24"/><path d="M45 55L435 90" stroke="#2f7d32" stroke-width="6"/><path d="M45 85L435 120" stroke="#6b46c1" stroke-width="6"/><path d="M110 145V79M240 145V96M370 145V112" stroke="#176e93" stroke-width="4"/><text x="55" y="42" font-size="22" fill="#2f7d32">línea de energía</text><text x="250" y="72" font-size="22" fill="#6b46c1">línea piezométrica</text></svg>
+          <div class="unit-card-body"><span class="tag">Tema 3.4</span><h3>Ecuación de Bernoulli</h3><p>Cargas, líneas de energía, bombas, pérdidas proporcionadas y explorador interactivo.</p><a href="tema-3-4/">Abrir tema</a></div>
+        </article>
+        <article class="unit-card">
+          <svg viewBox="0 0 480 200" role="img" aria-label="Codo de noventa grados con velocidades y reacción"><rect width="480" height="200" fill="#eef7f4"/><path d="M45 145H280Q375 145 375 55" fill="none" stroke="#176e93" stroke-width="32"/><path d="M70 145h145m-20-16 20 16-20 16M375 125V72m-16 20 16-20 16 20" fill="none" stroke="#2f7d32" stroke-width="7"/><path d="M300 135L225 62m8 27-8-27 27 7" fill="none" stroke="#e8871e" stroke-width="7"/><text x="75" y="120" font-size="22" fill="#173042">V₁</text><text x="395" y="92" font-size="22" fill="#173042">V₂</text><text x="195" y="48" font-size="22" fill="#173042">reacción</text></svg>
+          <div class="unit-card-body"><span class="tag">Tema 3.5</span><h3>Cantidad de movimiento</h3><p>Balance vectorial, fuerzas en codos y boquillas y explorador de reacción.</p><a href="tema-3-5/">Abrir tema</a></div>
+        </article>
+      </div>
+    </section>
+    <section id="metodo" class="callout" aria-labelledby="metodo-title">
+      <h2 id="metodo-title">Método de resolución</h2>
+      <p>Dibuja el sistema; define volumen de control, ejes y referencias; separa datos, supuestos e incógnitas; convierte al SI; escribe la ecuación simbólica completa; justifica términos eliminados; despeja; sustituye con unidades; comprueba dimensiones y orden de magnitud; interpreta el resultado y declara limitaciones.</p>
+      <p>Las prácticas propuestas son de baja energía. Si no existe equipo seguro o supervisión, trabaja con los datos equivalentes incluidos en cada capítulo.</p>
+    </section>
+    <section id="fuentes" aria-labelledby="fuentes-title">
+      <h2 id="fuentes-title">Bibliografía y procedencia</h2>
+      <p>Los esquemas, ejemplos y datos didácticos de esta unidad son originales. La secuencia corresponde al programa vigente de la asignatura.</p>
+      <ul>
+        <li>Gilberto Sotelo Ávila, <em>Hidráulica general. Volumen 1: Fundamentos</em>, Limusa, 2002.</li>
+        <li><a href="https://openstax.org/books/university-physics-volume-1/pages/14-6-bernoullis-equation">OpenStax · Bernoulli y dinámica de fluidos</a>.</li>
+        <li><a href="https://www.usbr.gov/tsc/techreferences/mands/wmm.html">U.S. Bureau of Reclamation · Water Measurement Manual</a>.</li>
+        <li><a href="https://pubs.usgs.gov/of/1988/0707/report.pdf">U.S. Geological Survey · The Momentum Principle</a>.</li>
+      </ul>
+    </section>
+  </main>
+  <footer>Autor: Miguel Armando López Beltrán · 2026 · Hidráulica para Agronomía</footer>
+</body>
+</html>

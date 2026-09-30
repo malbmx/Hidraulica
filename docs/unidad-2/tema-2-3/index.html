@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unidad II de Hidráulica para Agronomía, tema 2.3: Líneas de corriente. Explicaciones visuales, ecuaciones y ejercicios para principiantes.">
+  <title>2.3 Líneas de corriente | Hidráulica para Agronomía</title>
+  <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+  <header>
+    <p class="breadcrumb"><a href="../../">Libro</a> / <a href="../">Unidad II</a> / Tema 2.3</p>
+    <p class="eyebrow">Hidráulica aplicada a la Agronomía</p>
+    <h1>Unidad II · Hidrocinemática</h1>
+    <p class="chapter-intro">Capítulo 2.3: Líneas de corriente. Observa el fenómeno, comprende la ecuación y aplica lo aprendido.</p>
+    <nav class="chapter-nav" aria-label="Temas de la unidad II">
+      <a href="../tema-2-1/">2.1 Velocidad y aceleración</a>
+      <a href="../tema-2-2/">2.2 Clasificación de los flujos</a>
+      <a href="../tema-2-3/" aria-current="page">2.3 Líneas de corriente</a>
+      <a href="../tema-2-4/">2.4 Gasto o caudal</a>
+    </nav>
+  </header>
+  <main>
+    <section id="tema23" aria-labelledby="t23-title">
+      <h2 id="t23-title">2.3 · Líneas de corriente</h2>
+      <p class="question"><strong>En una bifurcación:</strong> una flecha nos muestra la velocidad del agua en un punto y un instante. Si unimos direcciones tangentes, ¿estamos dibujando la ruta pasada de una partícula?</p>
+      <figure class="visual"><svg viewBox="0 0 850 330" role="img" aria-labelledby="v23-title v23-desc"><title id="v23-title">Líneas de corriente en una bifurcación</title><desc id="v23-desc">Una conducción horizontal se divide en dos ramales. Curvas azules parten de la entrada y son tangentes a pequeñas flechas verdes de velocidad. Una partícula naranja se muestra en un instante; su trayectoria completa no puede deducirse de una sola imagen si el flujo cambia con el tiempo.</desc><path d="M30 135H370Q450 135 495 70L820 20M370 195Q450 195 495 260L820 310H30Z" fill="#c8eaf2" stroke="#197396" stroke-width="5"/><path d="M45 165C210 165 360 155 470 100S680 65 790 48M45 178C210 178 365 178 470 245S680 277 790 290" fill="none" stroke="#1681a7" stroke-width="5"/><g stroke="#1a724e" stroke-width="5"><path d="M180 165h55m-13-12 13 12-13 12M595 83l54-13m-16-8 16 8-12 14M590 255l55 14m-17-20 17 20-22 8" fill="none"/></g><circle cx="315" cy="164" r="13" fill="#d9872c"/><g font-family="system-ui" fill="#153f39" font-size="19"><text x="60" y="112">Entrada</text><text x="640" y="35">Ramal A</text><text x="640" y="320">Ramal B</text><text x="280" y="225">Partícula en t₁</text></g></svg><figcaption class="caption">Las líneas azules son instantáneas y tangentes a las flechas verdes. Una trayectoria necesita seguir una partícula en el tiempo.</figcaption></figure>
+      <p>La <strong>línea de corriente</strong> es una curva cuya tangente coincide con la dirección de la velocidad en un instante. La <strong>trayectoria</strong> es el camino que una misma partícula recorre a lo largo del tiempo. Una <strong>línea de traza</strong> reúne las partículas que pasaron por un punto fijo de inyección de colorante. Si el patrón es permanente, estas representaciones pueden coincidir; si cambia con el tiempo, no deben suponerse iguales.</p>
+      <p>En un pequeño segmento plano, la pendiente geométrica es Δy/Δx. Como el segmento es paralelo a la velocidad, sus componentes guardan la misma proporción:</p>
+      <p class="eq" aria-label="Pendiente de una línea de corriente igual a la componente vertical de velocidad entre la horizontal">dy/dx = v<sub>y</sub>/v<sub>x</sub> <small>(si v<sub>x</sub> ≠ 0)</small></p>
+      <p>Un <strong>tubo de flujo</strong> es el conjunto ideal de líneas de corriente que delimita una región; en el modelo, el agua no cruza sus paredes laterales. Esta imagen prepara la idea de sección transversal que usaremos para el caudal.</p>
+      <div class="example"><h3>Ejemplo guiado · mapa de flechas</h3><ol class="steps"><li>Fija el instante representado por el mapa.</li><li>Desde un punto de entrada, traza una curva siempre tangente a las flechas.</li><li>No la dibujes atravesando otra línea de corriente en un punto donde la velocidad tenga una dirección única.</li><li>Para conocer la trayectoria real, pide posiciones sucesivas de una partícula o un video.</li></ol></div>
+      <p class="practice"><strong>Practica:</strong> en el esquema de la bifurcación, dibuja dos líneas adicionales que sigan las flechas y señala un dato que falta para saber qué partícula llegó al ramal A. Explica por qué una fotografía de colorante puede ser ambigua.</p>
+    </section>
+    <section aria-labelledby="distinciones23-title">
+      <h2 id="distinciones23-title">Tres dibujos que no significan lo mismo</h2>
+      <div class="table-wrap"><table><caption>Qué representa cada construcción</caption><thead><tr><th>Representación</th><th>Pregunta que responde</th><th>Qué datos requiere</th></tr></thead><tbody><tr><td>Línea de corriente</td><td>¿Hacia dónde apunta la velocidad <strong>ahora</strong>?</td><td>Campo de velocidades en un instante.</td></tr><tr><td>Trayectoria</td><td>¿Por dónde pasó <strong>la misma partícula</strong>?</td><td>Posiciones sucesivas de esa partícula.</td></tr><tr><td>Línea de traza</td><td>¿Dónde están <strong>todas las partículas</strong> que pasaron por un punto de inyección?</td><td>Inyección continua y observación de un instante.</td></tr></tbody></table></div>
+      <p>En un flujo permanente, el mapa de velocidades no cambia con el tiempo; bajo esa condición, las tres construcciones pueden coincidir. Al abrir una compuerta o iniciar una bomba el patrón puede cambiar, por lo que una línea congelada en una fotografía no cuenta toda la historia de una partícula.</p>
+      <div class="example"><h3>Segundo ejemplo · un colorante en la entrada de un tanque</h3><ol class="steps"><li>Inyecta colorante de forma continua en un punto fijo de un modelo seguro.</li><li>La forma coloreada visible en un instante es una línea de traza, no necesariamente una trayectoria individual.</li><li>Para una trayectoria, marca una sola partícula identificable en video y une sus posiciones sucesivas.</li><li>Para una línea de corriente, mide o estima el campo de velocidades en un instante y dibuja curvas tangentes.</li></ol></div>
+      <p class="note">La relación dy/dx = v<sub>y</sub>/v<sub>x</sub> solo usa la dirección local y supone v<sub>x</sub> distinta de cero. No calcula por sí sola cuánto caudal entra en cada ramal.</p>
+      <details><summary>Orientación para la práctica de la bifurcación</summary><p>Las líneas dibujadas deben seguir las flechas sin cortes bruscos. Para decidir qué partícula llegará al ramal A hace falta conocer su posición inicial y cómo evoluciona el campo con el tiempo; una imagen fija no basta si el flujo no es permanente.</p></details>
+    </section>
+    <aside class="callout" aria-label="Continuar estudiando"><strong>Continúa la ruta:</strong> <a href="../tema-2-2/">← Tema 2.2</a> · <a href="../tema-2-4/">Tema 2.4 →</a>. Consulta la <a href="../#fuentes">bibliografía de la unidad</a> para profundizar.</aside>
+  </main>
+  <footer>Autor: Miguel Armando López Beltrán · 2026 · Hidráulica para Agronomía</footer>
+</body>
+</html>

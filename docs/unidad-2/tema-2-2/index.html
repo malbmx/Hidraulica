@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unidad II de Hidráulica para Agronomía, tema 2.2: Clasificación de los flujos. Explicaciones visuales, ecuaciones y ejercicios para principiantes.">
+  <title>2.2 Clasificación de los flujos | Hidráulica para Agronomía</title>
+  <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+  <header>
+    <p class="breadcrumb"><a href="../../">Libro</a> / <a href="../">Unidad II</a> / Tema 2.2</p>
+    <p class="eyebrow">Hidráulica aplicada a la Agronomía</p>
+    <h1>Unidad II · Hidrocinemática</h1>
+    <p class="chapter-intro">Capítulo 2.2: Clasificación de los flujos. Observa el fenómeno, comprende la ecuación y aplica lo aprendido.</p>
+    <nav class="chapter-nav" aria-label="Temas de la unidad II">
+      <a href="../tema-2-1/">2.1 Velocidad y aceleración</a>
+      <a href="../tema-2-2/" aria-current="page">2.2 Clasificación de los flujos</a>
+      <a href="../tema-2-3/">2.3 Líneas de corriente</a>
+      <a href="../tema-2-4/">2.4 Gasto o caudal</a>
+    </nav>
+  </header>
+  <main>
+    <section id="tema22" aria-labelledby="t22-title">
+      <h2 id="t22-title">2.2 · Clasificación de los flujos</h2>
+      <p class="question"><strong>Dos preguntas diferentes:</strong> ¿cambia la velocidad en un punto mientras pasan los minutos? ¿Cambia entre dos puntos si observamos el mismo instante?</p>
+      <div class="table-wrap"><table><caption>Matriz para clasificar el movimiento; el criterio depende de qué se compare</caption><thead><tr><th>Comparación</th><th>No cambia</th><th>Sí cambia</th></tr></thead><tbody><tr><th>En un punto fijo, a lo largo del tiempo</th><td><strong>Permanente</strong> respecto de la variable observada</td><td><strong>No permanente</strong></td></tr><tr><th>Entre posiciones, en el mismo instante</th><td><strong>Uniforme</strong> respecto de la variable observada</td><td><strong>No uniforme</strong></td></tr></tbody></table></div>
+      <p>Un flujo puede ser permanente y no uniforme a la vez: en una transición geométrica, la velocidad puede diferir entre dos secciones sin variar con el tiempo en cada punto. En cambio, el arranque de una bomba genera un cambio temporal durante el periodo observado. Siempre indica <strong>variable, lugar e intervalo</strong>; una sola foto no permite afirmar permanencia.</p>
+      <figure class="visual"><svg viewBox="0 0 850 255" role="img" aria-labelledby="v22-title v22-desc"><title id="v22-title">Comparación en espacio y tiempo</title><desc id="v22-desc">Dos medidores P y Q se ubican en secciones diferentes de un canal. En el primer instante P indica 0.4 y Q 0.6 metros por segundo; en el segundo instante repiten los mismos valores. El flujo es permanente en esos puntos durante el intervalo, pero no uniforme entre P y Q.</desc><path d="M45 70H805M45 150H805" stroke="#237c9f" stroke-width="5"/><path d="M50 85H800" stroke="#a3d8e5" stroke-width="70"/><circle cx="235" cy="85" r="25" fill="#1b704d"/><circle cx="620" cy="85" r="25" fill="#1b704d"/><g font-family="system-ui" fill="#143a34" font-size="21" text-anchor="middle"><text x="235" y="43">P</text><text x="620" y="43">Q</text><text x="235" y="205">0.40 m/s</text><text x="620" y="205">0.60 m/s</text><text x="427" y="244">Mismos valores en t₁ y t₂</text></g></svg><figcaption class="caption">Datos didácticos: permanente durante el intervalo observado en P y Q; no uniforme entre P y Q para la velocidad medida.</figcaption></figure>
+      <div class="example"><h3>Ejemplo resuelto · una bomba y dos puntos</h3><p>Durante cinco minutos, P registra 0.40 m/s y Q 0.60 m/s, sin cambio apreciable en cada registro. La velocidad es <strong>permanente en P y Q durante esos cinco minutos</strong> y <strong>no uniforme entre P y Q</strong>. No hemos demostrado qué sucede fuera de esos lugares o de ese tiempo.</p></div>
+      <p class="practice"><strong>Practica:</strong> una bomba arranca y en P se registran 0.1; 0.3 y 0.5 m/s. En Q solo se midió 0.7 m/s al final. ¿Qué clasificación temporal sí puedes sostener? ¿Qué comparación espacial requiere datos tomados al mismo instante?</p>
+      <p class="note">“Laminar” y “turbulento” describen otra característica del movimiento. Aquí se reconocen visualmente de forma inicial; su criterio cuantitativo se estudia después.</p>
+    </section>
+    <section aria-labelledby="combinaciones-title">
+      <h2 id="combinaciones-title">Las cuatro combinaciones posibles</h2>
+      <p>Clasificar exige declarar la magnitud que se compara. En esta tabla usamos la velocidad del agua; las situaciones son modelos didácticos, no diagnósticos hechos con una sola observación.</p>
+      <div class="table-wrap"><table><caption>Combinaciones de cambio temporal y espacial</caption><thead><tr><th></th><th>Uniforme: igual entre posiciones</th><th>No uniforme: diferente entre posiciones</th></tr></thead><tbody><tr><th>Permanente: igual con el tiempo en cada punto</th><td>Tramo ideal de canal recto con sección constante y velocidad representativa estable.</td><td>Transición geométrica estable: cada punto conserva su lectura, pero P y Q difieren.</td></tr><tr><th>No permanente: cambia con el tiempo en un punto</th><td>Modelo ideal en que toda la zona cambia de velocidad por igual al mismo instante.</td><td>Arranque de bomba con velocidades que además difieren entre dos secciones.</td></tr></tbody></table></div>
+      <h3>Procedimiento de decisión</h3><ol class="steps"><li>Elige una variable: velocidad, tirante o caudal.</li><li>Para permanencia, compara esa variable en <em>el mismo punto</em> a dos o más tiempos.</li><li>Para uniformidad, compárala en <em>dos posiciones</em> al mismo tiempo y bajo una definición espacial clara.</li><li>Si falta una de estas parejas de datos, escribe «información insuficiente» para esa clasificación.</li></ol>
+      <div class="example"><h3>Segundo ejemplo · durante el arranque</h3><p>En P se registran 0.10; 0.30 y 0.50 m/s en tres instantes. El movimiento es <strong>no permanente en P</strong> durante ese arranque. Una lectura de 0.70 m/s en Q tomada en el último instante permite decir que, para esa comparación P–Q, la velocidad es <strong>no uniforme en ese instante</strong>; no describe automáticamente el resto del canal.</p></div>
+      <details><summary>Orientación para la práctica</summary><p>Las lecturas cambiantes de P justifican «no permanente». Para comparar P con Q utiliza el valor de P al mismo instante que el de Q: 0.50 frente a 0.70 m/s. Una lectura tomada en otro momento no serviría para decidir uniformidad.</p></details>
+    </section>
+    <aside class="callout" aria-label="Continuar estudiando"><strong>Continúa la ruta:</strong> <a href="../tema-2-1/">← Tema 2.1</a> · <a href="../tema-2-3/">Tema 2.3 →</a>. Consulta la <a href="../#fuentes">bibliografía de la unidad</a> para profundizar.</aside>
+  </main>
+  <footer>Autor: Miguel Armando López Beltrán · 2026 · Hidráulica para Agronomía</footer>
+</body>
+</html>

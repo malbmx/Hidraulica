@@ -39,8 +39,7 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
-# pkgdown site
-docs/
+# GitHub Pages: docs/ contiene el sitio del curso y debe versionarse.
 
 # translation temp files
 po/*~

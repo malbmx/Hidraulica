@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unidad II de Hidráulica para Agronomía, tema 2.1: Velocidad y aceleración. Explicaciones visuales, ecuaciones y ejercicios para principiantes.">
+  <title>2.1 Velocidad y aceleración | Hidráulica para Agronomía</title>
+  <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+  <header>
+    <p class="breadcrumb"><a href="../../">Libro</a> / <a href="../">Unidad II</a> / Tema 2.1</p>
+    <p class="eyebrow">Hidráulica aplicada a la Agronomía</p>
+    <h1>Unidad II · Hidrocinemática</h1>
+    <p class="chapter-intro">Capítulo 2.1: Velocidad y aceleración. Observa el fenómeno, comprende la ecuación y aplica lo aprendido.</p>
+    <nav class="chapter-nav" aria-label="Temas de la unidad II">
+      <a href="../tema-2-1/" aria-current="page">2.1 Velocidad y aceleración</a>
+      <a href="../tema-2-2/">2.2 Clasificación de los flujos</a>
+      <a href="../tema-2-3/">2.3 Líneas de corriente</a>
+      <a href="../tema-2-4/">2.4 Gasto o caudal</a>
+    </nav>
+  </header>
+  <main>
+    <section id="tema21" aria-labelledby="t21-title">
+      <h2 id="t21-title">2.1 · Velocidad y aceleración</h2>
+      <p class="question"><strong>Imagina:</strong> soltamos un trazador seguro en un canal didáctico y registramos su posición cada segundo. ¿Qué nos dice el cambio de posición? ¿Qué nos diría un cambio de velocidad?</p>
+      <figure class="visual">
+        <svg viewBox="0 0 850 240" role="img" aria-labelledby="v21-title v21-desc"><title id="v21-title">Secuencia de posiciones de un trazador</title><desc id="v21-desc">El trazador pasa de x igual a cero metros en t igual a cero segundos a x igual a dos metros en t igual a cuatro segundos. Una regla horizontal marca la distancia y una flecha indica el desplazamiento.</desc>
+          <rect x="45" y="65" width="760" height="85" rx="18" fill="#bce7f1"/><path d="M45 107H805" stroke="#1a7194" stroke-width="4" stroke-dasharray="14 10"/><path d="M85 169H755" stroke="#173d4b" stroke-width="3"/><path d="m755 169-12-7v14z" fill="#173d4b"/>
+          <circle cx="100" cy="107" r="17" fill="#1a744f"/><circle cx="330" cy="107" r="17" fill="#1a744f"/><circle cx="560" cy="107" r="17" fill="#1a744f"/><circle cx="790" cy="107" r="17" fill="#1a744f"/>
+          <g fill="#123c34" font-size="20" font-family="system-ui" text-anchor="middle"><text x="100" y="46">t = 0 s</text><text x="330" y="46">t = 1.3 s</text><text x="560" y="46">t = 2.7 s</text><text x="755" y="46">t = 4 s</text><text x="100" y="204">0 m</text><text x="755" y="204">2 m</text></g>
+        </svg>
+        <figcaption class="caption">Esquema didáctico, no a escala. La marca se desplaza 2 m en 4 s; el cronómetro y la regla miden cosas distintas.</figcaption>
+      </figure>
+      <p>La <strong>posición</strong> indica dónde está el trazador respecto a una referencia. El <strong>desplazamiento</strong> es posición final menos inicial: Δx = x<sub>f</sub> − x<sub>i</sub>. La velocidad media describe ese cambio por unidad de tiempo:</p>
+      <p class="eq" aria-label="Velocidad media igual a cambio de posición dividido entre cambio de tiempo">v<sub>media</sub> = Δx / Δt</p>
+      <p>Δx se mide en metros y Δt en segundos; por eso v se expresa en m/s. Si el trazador recorre 2 m en 4 s en una dirección, v<sub>media</sub> = 0.50 m/s. Una medición de recorrido no describe por sí sola la velocidad en cada instante ni la de toda la sección del canal.</p>
+      <p>Si comparamos dos velocidades obtenemos la <strong>aceleración media</strong>:</p>
+      <p class="eq" aria-label="Aceleración media igual a cambio de velocidad dividido entre cambio de tiempo">a<sub>media</sub> = Δv / Δt</p>
+      <p>Su unidad es (m/s)/s = m/s². La velocidad también cambia si cambia la dirección, aunque la rapidez indicada por un instrumento sea igual. Más adelante, la velocidad instantánea se interpreta como la pendiente local de una gráfica posición–tiempo: v = dx/dt; no es necesario dominar derivadas para resolver las primeras actividades.</p>
+      <div class="example"><h3>Ejemplo resuelto · cambio de velocidad en un ramal</h3><ol class="steps"><li>Datos didácticos: una velocidad representativa cambia de 0.40 a 0.70 m/s en 3 s.</li><li>Calcula el cambio: Δv = 0.70 − 0.40 = 0.30 m/s.</li><li>Divide por el intervalo: a<sub>media</sub> = 0.30/3 = 0.10 m/s².</li><li>Interpreta: la velocidad aumentó durante ese intervalo; el dato no demuestra que el aumento fuera constante a cada instante.</li></ol></div>
+      <p class="practice"><strong>Practica:</strong> un trazador recorre 2.0 m en 3.8 s, luego en 4.1 s y después en 4.0 s. Calcula una velocidad de recorrido por ensayo, su promedio y el rango. Explica por qué este trazador superficial no da directamente la velocidad media de toda la sección.</p>
+    </section>
+    <section aria-labelledby="datos21-title">
+      <h2 id="datos21-title">De una tabla a una gráfica</h2>
+      <p>Supón que la posición de un trazador se registra en un canal recto. Compara cuánto avanzó en cada intervalo antes de elegir una fórmula.</p>
+      <div class="table-wrap"><table><caption>Datos didácticos de posición</caption><thead><tr><th>Tiempo t (s)</th><th>Posición x (m)</th><th>Velocidad media del intervalo siguiente</th></tr></thead><tbody><tr><td>0</td><td>0.0</td><td>(0.6 − 0.0)/(2 − 0) = 0.30 m/s</td></tr><tr><td>2</td><td>0.6</td><td>(2.0 − 0.6)/(4 − 2) = 0.70 m/s</td></tr><tr><td>4</td><td>2.0</td><td>—</td></tr></tbody></table></div>
+      <figure class="visual"><svg viewBox="0 0 760 300" role="img" aria-labelledby="graf21-title graf21-desc"><title id="graf21-title">Gráfica de posición contra tiempo</title><desc id="graf21-desc">La posición sube de cero metros a 0.6 metros entre cero y dos segundos y a dos metros al cuarto segundo. El segundo tramo tiene mayor pendiente y mayor velocidad media.</desc><path d="M80 35V240H700" fill="none" stroke="#183b35" stroke-width="4"/><path d="M80 240L380 180L680 40" fill="none" stroke="#14779b" stroke-width="6"/><g fill="#14779b"><circle cx="80" cy="240" r="9"/><circle cx="380" cy="180" r="9"/><circle cx="680" cy="40" r="9"/></g><g font-family="system-ui" font-size="20" fill="#173a35"><text x="50" y="258">0</text><text x="360" y="268">2</text><text x="665" y="268">4 s</text><text x="20" y="183">0.6</text><text x="25" y="46">2 m</text><text x="480" y="115">Mayor pendiente</text></g></svg><figcaption class="caption">La pendiente de cada tramo es Δx/Δt. Una línea más inclinada indica mayor velocidad media en ese intervalo.</figcaption></figure>
+      <p>La velocidad media de los 4 s completos es (2.0 − 0.0)/4 = 0.50 m/s: desplazamiento total dividido por tiempo total. Las velocidades de 0.30 y 0.70 m/s corresponden a intervalos distintos. Asignadas a sus puntos medios (t = 1 y 3 s), sugieren una aceleración media aproximada de (0.70 − 0.30)/(3 − 1) = 0.20 m/s²; no prueban aceleración constante.</p>
+      <h3>Una distinción agronómica importante</h3><p>Un flotador sigue aproximadamente la superficie. El agua cerca del fondo y de las paredes suele moverse a otra velocidad. Por eso <strong>velocidad del flotador ≠ velocidad media de toda la sección</strong> sin un método de corrección justificado.</p>
+      <details><summary>Orientación para la práctica del trazador</summary><p>Las velocidades son aproximadamente 0.526; 0.488 y 0.500 m/s. Su promedio aritmético es 0.505 m/s y el rango es 0.038 m/s. Reporta el método y sus límites: no es un aforo profesional.</p></details>
+    </section>
+    <aside class="callout" aria-label="Continuar estudiando"><strong>Continúa la ruta:</strong> <a href="../">← Portada de la unidad</a> · <a href="../tema-2-2/">Tema 2.2 →</a>. Consulta la <a href="../#fuentes">bibliografía de la unidad</a> para profundizar.</aside>
+  </main>
+  <footer>Autor: Miguel Armando López Beltrán · 2026 · Hidráulica para Agronomía</footer>
+</body>
+</html>
